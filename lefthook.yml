@@ -11,9 +11,7 @@ pre-commit:
   parallel: true
   jobs:
     - name: lint
-      glob: "*.js"
-      run: npm run lint
+      run: "cd web && npm run lint"
 
     - name: test
-      glob: "__tests__/**/*.js"
-      run: npm test
+      run: "cd web && npm test"
