@@ -13,7 +13,7 @@ jobs:
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v4
         with:
-          issue-number: ${{github.Event.action.issue.number}}
+          issue-number: ${{github.event.action.issue.number}}
           body: |
             This is a multi-line test comment
             - With GitHub **Markdown** :sparkles:
