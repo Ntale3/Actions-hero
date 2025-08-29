@@ -1,0 +1,43 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Express app with routes, tests, linting and GitHub Actions CI for practice.",
+  "main": "src/server.js",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "prepare": "lefthook install || true"
+  },
+  "keywords": [
+    "express",
+    "jest",
+    "supertest",
+    "ci",
+    "github-actions"
+  ],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n": "^17.10.2",
+    "globals": "^16.3.0",
+    "jest": "^29.7.0",
+    "lefthook": "^1.7.11",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "supertest": "^7.1.4"
+  }
+}

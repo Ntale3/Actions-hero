@@ -1,0 +1,33 @@
+# dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+.pnpm-debug.log*
+package-lock.json
+
+# env
+.env
+.env.local
+.env.*.local
+
+# testing
+coverage
+.junit
+
+# logs
+logs
+*.log
+*.log.*
+
+# editor
+.idea
+.vscode
+
+# OS
+.DS_Store
+
+# docker
+.docker
+docker-data

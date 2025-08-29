@@ -1,0 +1,13 @@
+# Lefthook config: run basic checks before committing/pushing
+pre-commit:
+  parallel: true
+  commands:
+    eslint:
+      run: npm run lint
+    prettier:
+      run: npm run format -- --check
+
+pre-push:
+  commands:
+    tests:
+      run: npm test
