@@ -1,19 +1,19 @@
+# lefthook.yml
 pre-push:
   jobs:
-    - name: linter
+    - name: lint
       run: npm run lint
 
     - name: test
-      run: npm run test
+      run: npm test
 
 pre-commit:
   parallel: true
   jobs:
-    - run: run all
-      glob: "*.{js}"
-
-    - name: linter
-      run: npm run dev
+    - name: lint
+      glob: "*.js"
+      run: npm run lint
 
     - name: test
-      runner: npm run test
+      glob: "__tests__/**/*.js"
+      run: npm test
