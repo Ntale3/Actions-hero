@@ -1,0 +1,19 @@
+pre-push:
+  jobs:
+    - name: linter
+      run: npm run lint
+
+    - name: test
+      run: npm run test
+
+pre-commit:
+  parallel: true
+  jobs:
+    - run: run all
+      glob: "*.{js}"
+
+    - name: linter
+      run: npm run dev
+
+    - name: test
+      runner: npm run test
