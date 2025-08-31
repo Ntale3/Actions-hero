@@ -1,0 +1,49 @@
+name: continous deployments
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      'web/**'
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./web
+
+jobs:
+
+  deploy_staging:
+
+    environment: staging
+    name: 'deploy to staging'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+        name: 'checkout repository'
+        
+      - name: deploy to staging
+        run: echo 'deploy to staging....'
+
+
+
+# ==================================================
+#            DEPLOY TO PRODUCTION
+# ==================================================
+
+  deploy_production:
+    environment: production
+    name: 'deploy to production'
+    runs-on: ubuntu-latest
+    needs: deploy_staging
+
+    steps:
+      - uses: actions/checkout@v5
+        name: 'checkout repository'
+        
+      - name: deploy to production
+        run: echo 'deploy to production...'
+        #wait: deploy_staging
